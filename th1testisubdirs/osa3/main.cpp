@@ -1,17 +1,16 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-//toimii ilman <ctime>:a, mutta miksi?
 
 using namespace std;
 
-int main()
-{
-    srand(time(0));
-    int randomLuku = rand() % 1 + 20;
+int game(int maxNumber){
+    int randomLuku = rand() % maxNumber + 1;
     int pelaajanArvaamaLuku;
+    int arvaustenMaara = 0;
     do{
-        cout << "Guess number between 20-1:";
+        arvaustenMaara++;
+        cout << "Guess number between 1-" << maxNumber << ":";
         cin >> pelaajanArvaamaLuku;
         if (pelaajanArvaamaLuku < randomLuku){
             cout << "Number is bigger" << endl;
@@ -21,6 +20,18 @@ int main()
         }
     }while(pelaajanArvaamaLuku != randomLuku);
     cout << "Correct!" << endl;
+
+    return arvaustenMaara;
+}
+
+int main()
+{
+    srand(time(0));
+    int annettuMaxLuku;
+    cout << "Give a number: ";
+    cin >> annettuMaxLuku;
+    int tulos = game(annettuMaxLuku);
+    cout << "It took you " << tulos << " guesses to get it correct!" << endl;
 
     return 0;
 }
