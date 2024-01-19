@@ -4,8 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        apartment.cpp \
         main.cpp \
         vehicle.cpp
 
 HEADERS += \
+    apartment.h \
     vehicle.h
