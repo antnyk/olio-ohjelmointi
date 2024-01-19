@@ -4,8 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    osa1.cpp \
-    postilaatikko.cpp
+        game.cpp \
+        main.cpp
 
 HEADERS += \
-    postilaatikko.h
+    game.h

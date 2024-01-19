@@ -22,8 +22,12 @@ void numeronArvaus(){
 
 int main()
 {
+<<<<<<< HEAD
+    cout << "Hello Worldd!" << endl;
+=======
     srand(time(0));
     numeronArvaus();
 
+>>>>>>> 4384959dafba908fba02b47d2b8a75b7bd544939
     return 0;
 }

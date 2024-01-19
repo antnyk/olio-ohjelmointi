@@ -4,8 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    osa1.cpp \
-    postilaatikko.cpp
+        apartment.cpp \
+        main.cpp \
+        vehicle.cpp
 
 HEADERS += \
-    postilaatikko.h
+    apartment.h \
+    vehicle.h

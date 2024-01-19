@@ -1,8 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>  //???? toimii ilman tätäkin
-
-
+#include <postilaatikko.h>
 
 using namespace std;
 //1
@@ -70,6 +69,21 @@ float keskiarvo(void){
 
 
 int main() {
+    Postilaatikko pl;
+    pl.lisaaPosti(5);
+    pl.lisaaPosti(6);
+    pl.otaPosti(1);
+    Postilaatikko kl;
+    kl.lisaaPosti(3);
+    kl.otaPosti(3);
+
+    printf("\n**********************************\n");
+    int lukua = 1;
+    int lukub = 5;
+    lukua = lukub;
+    lukua += 6;
+    printf("%d", lukua);
+    printf("\n**********************************\n");
     //th6
     tarkista_jaollisuus(5,4);
     //8
