@@ -4,8 +4,4 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    osa1.cpp \
-    postilaatikko.cpp
-
-HEADERS += \
-    postilaatikko.h
+        main.cpp
