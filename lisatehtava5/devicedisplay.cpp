@@ -12,5 +12,5 @@ void DeviceDisplay::setDisplayResolution()
 
 short DeviceDisplay::getDisplayResolution()
 {
-
+    return displayResolution;
 }

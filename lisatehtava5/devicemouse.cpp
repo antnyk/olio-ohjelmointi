@@ -12,5 +12,5 @@ void DeviceMouse::setPrimaryButton()
 
 short DeviceMouse::getPrimaryButton()
 {
-
+    return primaryButton;
 }

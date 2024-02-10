@@ -12,5 +12,5 @@ void DeviceBaseClass::setDeviceID()
 
 short DeviceBaseClass::getDeviceID()
 {
-
+    return deviceID;
 }

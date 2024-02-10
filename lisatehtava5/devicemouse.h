@@ -3,7 +3,7 @@
 #include "devicebaseclass.h"
 using namespace std;
 
-class DeviceMouse
+class DeviceMouse: public DeviceBaseClass
 {
 public:
     DeviceMouse();

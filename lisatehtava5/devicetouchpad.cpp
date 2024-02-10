@@ -12,5 +12,5 @@ void DeviceTouchPad::setTouchPadSensitivity()
 
 short DeviceTouchPad::getTouchPadSensitivity()
 {
-
+    return touchPadSensitivity;
 }

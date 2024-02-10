@@ -1,8 +1,8 @@
 #ifndef DEVICEBASECLASS_H
 #define DEVICEBASECLASS_H
 #include <iostream>
+#include <windows.h>
 using namespace std;
-
 
 class DeviceBaseClass
 {

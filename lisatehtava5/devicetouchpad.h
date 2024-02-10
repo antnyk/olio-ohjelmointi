@@ -3,7 +3,7 @@
 #include "devicebaseclass.h"
 using namespace std;
 
-class DeviceTouchPad
+class DeviceTouchPad: public DeviceBaseClass
 {
 public:
     DeviceTouchPad();

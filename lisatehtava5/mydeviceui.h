@@ -3,10 +3,11 @@
 #include <devicedisplay.h>
 #include <devicemouse.h>
 #include <devicetouchpad.h>
+
 using namespace std;
 
 
-class MyDeviceUI
+class MyDeviceUI : public DeviceDisplay, DeviceMouse, DeviceTouchPad
 {
 public:
     MyDeviceUI();

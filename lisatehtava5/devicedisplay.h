@@ -3,7 +3,7 @@
 #include "devicebaseclass.h"
 using namespace std;
 
-class DeviceDisplay
+class DeviceDisplay : public DeviceBaseClass
 {
 public:
     DeviceDisplay();
