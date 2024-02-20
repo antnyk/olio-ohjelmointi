@@ -52,6 +52,8 @@ private slots:
 
     void on_btnJako_clicked();
 
+    void on_lineEditResult_cursorPositionChanged(int arg1, int arg2);
+
 private:
     Ui::MainWindow *ui;
     int myNumber = 0;
