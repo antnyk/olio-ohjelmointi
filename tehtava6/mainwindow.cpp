@@ -88,7 +88,6 @@ void MainWindow::on_btn8_clicked()
 void MainWindow::on_btn9_clicked()
 {
     numberClickHandler();
-    resetLineEdits();
 }
 
 
