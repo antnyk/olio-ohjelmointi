@@ -64,5 +64,6 @@ private:
     void clearAndEnterClickHandler();
     void addSubMulDivClickHandler();
     void resetLineEdits();
+
 };
 #endif // MAINWINDOW_H

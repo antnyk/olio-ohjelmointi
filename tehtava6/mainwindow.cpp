@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     // aloitus arvo
     ui->lineEdit->setText(QString::number(myNumber));
+
 }
 
 MainWindow::~MainWindow()
@@ -90,7 +91,7 @@ void MainWindow::on_btn9_clicked()
 }
 
 
-// Muut painikkeet
+// Clear ja Enter painikkeet
 
 
 void MainWindow::on_btnClear_clicked()
@@ -105,11 +106,13 @@ void MainWindow::on_btnEnter_clicked()
 }
 
 
+// Laskenta painikkeet
+
+
 void MainWindow::on_btnJako_clicked()
 {
 
 }
-
 
 
 void MainWindow::on_btnKerto_clicked()
@@ -134,4 +137,13 @@ void MainWindow::on_btnMiinus_clicked()
 void MainWindow::resetLineEdits()
 {
 
+}
+
+
+void MainWindow::numberClickHandler()
+{
+    // Esitehtävä koodi
+    QPushButton * button = qobject_cast<QPushButton*>(sender());
+    QString name = button->objectName();
+    qDebug() << "Button name:" << name;
 }
