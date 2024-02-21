@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
+
+#define TWO_MIN 120000;
+#define FIVE_MIN 300000;
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,5 +22,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QTimer *objectTimer;
+    short x=0;
+
+
 };
 #endif // MAINWINDOW_H
