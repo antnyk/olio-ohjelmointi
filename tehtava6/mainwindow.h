@@ -54,6 +54,14 @@ private slots:
 
     void on_lineEditResult_cursorPositionChanged(int arg1, int arg2);
 
+    void on_btnClearAll_clicked();
+
+    void on_lineEditNum1_textEdited(const QString &arg1);
+
+    void on_lineEditNum2_textEdited(const QString &arg1);
+
+    void on_lineEditNum2_selectionChanged();
+
 private:
     Ui::MainWindow *ui;
     int myNumber = 0;
@@ -61,6 +69,8 @@ private:
     int state;
     float result;
     short operand;
+    float numberTallenne;
+
 
     void numberClickHandler();
     void clearAndEnterClickHandler();
