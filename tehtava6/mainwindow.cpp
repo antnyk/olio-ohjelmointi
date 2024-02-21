@@ -218,22 +218,3 @@ void MainWindow::on_btnClearAll_clicked()
     clearAndEnterClickHandler();
 }
 
-// OMIA TESTAILUJA, TOIVOTTAVASTI EI RIKO KOODIA
-/*
-void MainWindow::on_lineEditNum1_textEdited(const QString &arg1)
-{
-    state=1;
-}
-
-
-void MainWindow::on_lineEditNum2_textEdited(const QString &arg1)
-{
-    state=2;
-}
-
-
-void MainWindow::on_lineEditNum2_selectionChanged()
-{
-    state=2;
-}
-*/

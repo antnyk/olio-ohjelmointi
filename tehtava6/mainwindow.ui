@@ -738,7 +738,7 @@
    <widget class="QPushButton" name="btnClearAll">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>50</x>
       <y>360</y>
       <width>80</width>
       <height>24</height>

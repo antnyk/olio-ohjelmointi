@@ -56,11 +56,6 @@ private slots:
 
     void on_btnClearAll_clicked();
 
-    void on_lineEditNum1_textEdited(const QString &arg1);
-
-    void on_lineEditNum2_textEdited(const QString &arg1);
-
-    void on_lineEditNum2_selectionChanged();
 
 private:
     Ui::MainWindow *ui;
