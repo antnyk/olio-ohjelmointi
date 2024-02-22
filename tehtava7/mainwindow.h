@@ -18,6 +18,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private slots:
     void timePass();
 
@@ -45,11 +46,13 @@ private:
     int timeRemainingPlayer1=0;
     int timeRemainingPlayer2=0;
 
-    const int TWO_MIN = 120000;
+    const int TWO_MIN = 3000;//120000;
     const int FIVE_MIN = 300000;
 
     int state = 0;
 
-    void gameWinner(int s);
+    void gameWinner();
+    void setGameInfoText(QString, short);
+    void startSetup();
 };
 #endif // MAINWINDOW_H
