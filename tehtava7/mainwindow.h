@@ -46,7 +46,7 @@ private:
     int timeRemainingPlayer1=0;
     int timeRemainingPlayer2=0;
 
-    const int TWO_MIN = 3000;//120000;
+    const int TWO_MIN = 120000;
     const int FIVE_MIN = 300000;
 
     int state = 0;
