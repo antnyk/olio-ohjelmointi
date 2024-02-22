@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     startSetup();
-    ui->label->setText("SELECT PLAYTIME AND PRESS START GAME");
+    setGameInfoText("Select playtime andd press start game!", 10);
 }
 
 MainWindow::~MainWindow()
@@ -24,7 +24,7 @@ void MainWindow::on_btnStart_clicked()
     objectTimer=new QTimer();
     connect(objectTimer, SIGNAL(timeout()),this,SLOT(timePass()));
     objectTimer->start(1000);
-    ui->label->setText("GAME ONGOING");
+    setGameInfoText("Game ongoing", 10);
     ui->btnStart->setEnabled(false);
     ui->btnStop->setEnabled(true);
     //time buttons need to be disabled
@@ -39,13 +39,19 @@ void MainWindow::timePass(){
         timeRemainingPlayer1 -= 1000;
         qDebug()<<"Aikaa kulunut pelaaja1 "<<timeRemainingPlayer1/1000<<" sekunttia.";
         ui->progbarPlayer1->setValue(timeRemainingPlayer1);
-        if (timeRemainingPlayer1 <= 0) gameWinner();
+        if (timeRemainingPlayer1 <= 0){
+                gameWinner();
+                setGameInfoText("PLAYER 2 WON!", 14);
+            }
         break;
     case 1:
         timeRemainingPlayer2 -= 1000;
         qDebug()<<"Aikaa kulunut pelaaja2 "<<timeRemainingPlayer2/1000<<" sekunttia.";
         ui->progbarPlayer2->setValue(timeRemainingPlayer2);
-        if (timeRemainingPlayer2 <= 0) gameWinner();
+        if (timeRemainingPlayer2 <= 0){
+            gameWinner();
+            setGameInfoText("PLAYER 1 WON!", 14);
+        }
         break;
     }
 }
@@ -54,6 +60,7 @@ void MainWindow::on_btnTimeTwoMin_clicked()
 {
     ui->btnStart->setEnabled(true);
     ui->label->setText("READY TO PLAY");
+    setGameInfoText("Ready to play", 10);
     qDebug()<<"Time mode 2 minutes";
     timeRemainingPlayer1 = TWO_MIN;
     timeRemainingPlayer2 = TWO_MIN;
@@ -67,7 +74,7 @@ void MainWindow::on_btnTimeTwoMin_clicked()
 void MainWindow::on_btnTimeFiveMin_clicked()
 {
     ui->btnStart->setEnabled(true);
-    ui->label->setText("READY TO PLAY");
+    setGameInfoText("Ready to play", 10);
     qDebug()<<"Time mode 5 minutes";
     timeRemainingPlayer1 = FIVE_MIN;
     timeRemainingPlayer2 = FIVE_MIN;
@@ -80,13 +87,13 @@ void MainWindow::on_btnTimeFiveMin_clicked()
 
 void MainWindow::on_btnSwitchToPlayer1_clicked()
 {
-    state = 0;
+    state = 1;
 }
 
 
 void MainWindow::on_btnSwitchToPlayer2_clicked()
 {
-    state = 1;
+    state = 0;
 }
 
 
@@ -94,29 +101,28 @@ void MainWindow::on_btnStop_clicked()
 {
     objectTimer->stop();
     qDebug()<<"Game stopped";
-    ui->label->setText("GAME STOPPED");
+    setGameInfoText("Game stopped", 10);
     ui->btnContinue->setEnabled(true);
 }
+
 
 void MainWindow::gameWinner()
 {
     objectTimer->stop();
     startSetup();
     qDebug()<<"Winner declared";
-    switch(state){
-    case 0:
-        ui->label->setText("PLAYER 2 WON");
-        break;
-    case 1:
-        ui->label->setText("PLAYER 1 WON");
-        break;
-    }
     delete objectTimer;
 }
 
-void MainWindow::setGameInfoText(QString, short)
+
+void MainWindow::setGameInfoText(QString lause, short fontSize)
 {
 
+    ui->label->setText(lause);
+    //fontin koon muokkaus
+    QFont font;
+    font.setPointSize(fontSize);
+    ui->label->setFont(font);
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -129,13 +135,16 @@ void MainWindow::on_btnContinue_clicked()
 {
     objectTimer->start();
     qDebug()<<"Game continues";
+    setGameInfoText("Game ongoing", 10);
     ui->btnContinue->setEnabled(false);
 }
 
 
 void MainWindow::on_btnRestart_clicked()
 {
-
+    setGameInfoText("Restarted", 10);
+    delete objectTimer;
+    startSetup();
 }
 
 void MainWindow::startSetup(){
